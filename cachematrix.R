@@ -1,7 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+##  We design a pair of functions that cache the inverse of a matrix.
+##  In case that the inverse is calculated, we use a property of the R objects.
+##  This mean that we use the getinv function to get the inverse.
 
-## Write a short comment describing this function
+## makeCacheMatrix creates a special "matrix" (object) which is really a list containing a functions to
+## set the value of the matrix
+## get the value of the matrix
+## set the value of the inverse
+## get the value of the inverse
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -19,7 +24,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The next function calculates the inverse of the matrix
+## It first checks if the inverse is calculated. If gets, stops computation and gets the inverse
+## Otherwise it calculates the inverse of the matrix and store in the object via setiverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
